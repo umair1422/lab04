@@ -1,0 +1,14 @@
+Package: lab4
+Type: Package
+Title: This package implements tasks of lab4
+Version: 0.1.0
+Authors@R: 
+    c(person("Usama", "Nadeem", , "usamanadeem321@gmail.com", role = c("aut")), 
+    person("Muhammad", "Umair", , "Umair.raja.1422@gmail.com", role = c("aut", "cre")))
+Description: This packege implements the university's theme and linear regression and calculates residuals, regressionCoefficient, degreeOfFreedom, fittedValues etc
+License: NA
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
