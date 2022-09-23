@@ -12,6 +12,3 @@ it returns ggplot object.
 \description{
 the function plot graph with university's theme
 }
-\examples{
-Theme_linkoping()
-}

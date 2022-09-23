@@ -1,5 +1,6 @@
 #' Lab4: Linkoping University theme
-#'
+#' @import grDevices
+#' @importFrom ggplot2 %+replace%
 #' @description the function plot graph with university's theme
 #' @return it returns ggplot object.
 #' @export
