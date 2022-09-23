@@ -121,7 +121,35 @@ Print the simmary along with the pvalue, tvalue, sigma and degree of freedom
 \section{Methods}{
 
 \describe{
-\item{\code{print()}}{lllllllllllllllllllllllllllllllllllllllll}
+\item{\code{coef()}}{return the coefficeints as named vec}
+
+\item{\code{initialize(formula, data)}}{Constructor to initialize the data fields of this class}
+
+\item{\code{plot()}}{Plots 2 graphs on a grid that are mention in the lab manual}
+
+\item{\code{pred()}}{return the preticted values (y-hat)}
+
+\item{\code{print()}}{Prints out the coefficient and coefficent names}
+
+\item{\code{resid()}}{return only residuals as vec form}
+
+\item{\code{setDegreesOfFreedom(RegCofMatrix, X)}}{Sets the value for DegreesOfFreedom}
+
+\item{\code{setFittedValues(RegCofMatrix, X)}}{Sets the value for FittedValues}
+
+\item{\code{setPValues()}}{Sets the value for TValues}
+
+\item{\code{setRegCofficient(X, y)}}{Sets the value for RegressionCoeficientMatrix field}
+
+\item{\code{setResidual(y)}}{Sets the value for Residuals}
+
+\item{\code{setResidualVariance()}}{Sets the value for ResidualVariance}
+
+\item{\code{setTValues()}}{Sets the value for TValues}
+
+\item{\code{setVarianceOfTheRegressionCoefficients(X)}}{Sets the value for VarianceOfTheRegressionCoefficients}
+
+\item{\code{summary()}}{Print the simmary along with the pvalue, tvalue, sigma and degree of freedom}
 }}
 
 \examples{
