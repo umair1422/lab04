@@ -152,15 +152,11 @@ linreg <- setRefClass("linreg",
                         #' @return nothing
                         print = function()
                         {
-                          cat("Call:\n")
-                          cat("linreg(formula = ", format(FunctionFormula), ", data = ", DataName ,")\n\n", sep = "")
-                          cat("Coefficients:\n")
-                          cat(dimnames(RegressionCoeficientMatrix)[[1]], "\n")
-                          cat(RegressionCoeficientMatrix)
 
-                          #cat("Call:\n", "linreg(formula = ", format(FunctionFormula), ", data = ", DataName ,")\n\n","Coefficients:\n" )
-                          #cat(dimnames(RegressionCoeficientMatrix)[[1]], "\n", RegressionCoeficientMatrix)
-                        },
+                          cat("Call:\n","linreg(formula = ", format(FunctionFormula), ", data = ", DataName ,")\n\n", sep = "")
+                          cat("Coefficients:\n",dimnames(RegressionCoeficientMatrix)[[1]], "\n",RegressionCoeficientMatrix)
+
+                           },
 
 
                         #' Plot using ggplot2
@@ -243,17 +239,17 @@ linreg <- setRefClass("linreg",
                         #' @description
                         #' Print the simmary along with the pvalue, tvalue, sigma and degree of freedom
                         #' @return coefficeints as named vec
-                        summary = function(){ "returns the summary of linear regression model"
+                        summary = function(){
 
-                          summaryMatrix <- matrix(round(c(as.vector(RegressionCoeficientMatrix), as.vector(sqrt(VarianceOfTheRegressionCoefficients)), as.vector(TValues), as.vector(PValues)),4), ncol = 4)
-                          Pval_thresh <- ifelse(PValues<0.001, "***",no = ifelse(PValues<0.01, "**", ifelse(PValues<0.05, "*", ifelse(PValues<0.1, ".", " "))))
-                          summaryMatrix <- cbind(summaryMatrix, Pval_thresh)
+                          summaryDetails <- matrix(round(c(as.vector(RegressionCoeficientMatrix), as.vector(sqrt(VarianceOfTheRegressionCoefficients)), as.vector(TValues), as.vector(PValues)),4), ncol = 4)
+                          PThreshold <- ifelse(PValues<0.001, "***",no = ifelse(PValues<0.01, "**", ifelse(PValues<0.05, "*", ifelse(PValues<0.1, ".", " "))))
+                          summaryDetails <- cbind(summaryDetails, PThreshold)
 
-                          colnames(summaryMatrix) <- c("    Coefficients", "Standard Error" ,"Tvalues", "PValues", " ")
-                          rownames(summaryMatrix) <- dimnames(RegressionCoeficientMatrix)[[1]]
+                          colnames(summaryDetails) <- c("Coefficients", "Std Error" ,"T-values", "P-Values", " ")
+                          rownames(summaryDetails) <- dimnames(RegressionCoeficientMatrix)[[1]]
                           cat("Call:\n")
                           cat("linreg(formula = ", format(FunctionFormula), ", data = ", DataName ,")\n\n", sep = "")
-                          write.table((summaryMatrix), quote = FALSE)
+                          write.table((summaryDetails), quote = FALSE)
                           cat("\n Residual standard error:", sqrt(ResidualVariance),"on", DegreesOfFreedom,"degrees of freedom")
                           cat("Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1")
                         }) #methods

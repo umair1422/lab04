@@ -118,11 +118,6 @@ Print the simmary along with the pvalue, tvalue, sigma and degree of freedom
 \item{\code{PValues}}{t-values in vec form}
 }}
 
-\section{Methods}{
-
-\describe{
-\item{\code{summary()}}{returns the summary of linear regression model}
-}}
 
 \examples{
 newobj= linreg$new(frm, iris)
