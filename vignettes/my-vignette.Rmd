@@ -25,3 +25,38 @@ This package contains the tasks of lab4 including linreg and theme making task
 ## Linreg class
 input to this class is formula and data and the class contains various methods to compute various statistical parameters like tvalues, pvalues, residuals etc
 
+
+
+1. **pred()**
+
+This function returns the predicted values (P values)
+
+Example:
+```
+pval<- linreg(Petal.Length~Sepal.Width+Sepal.Length, data=iris)
+pval$pred()
+```
+2. **coef()**
+
+This function returns coefficients as a named vector
+
+3. **summary()**
+
+This function returns the summary of linear regression model
+
+
+4. **print()**
+
+this function displays formula, data name and  RegressionCoefficientMatrix:
+
+ 
+5. **plot()**
+
+This function plots the graph of residuals vs Fitted values
+
+
+6. **resid()**
+
+This function returns vector of residuals
+
+
