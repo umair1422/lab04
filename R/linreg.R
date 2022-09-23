@@ -13,12 +13,12 @@
 #' @examples
 #' newobj= linreg$new(frm, iris)
 #' newobj$summary()
-#'
+#' @import ggplot2
 #' @return class
 #' @export linreg
+#' @exportClass linreg
 #' @import methods
 
-library (ggplot2)
 linreg <- setRefClass("linreg",
 
                       fields = list(
@@ -114,7 +114,7 @@ linreg <- setRefClass("linreg",
                            },
 
                         plot = function()
-                        {"Plots 2 graphs on a grid that are mention in the lab manual"
+                        { library(ggplot2)
                           VecFittedValues= unlist (FittedValues)
                           VecResiduals= unlist (Residuals)
                           DataFrame2PlotResidualFit <- data.frame(VecResiduals, VecFittedValues, c(1:length(FittedValues)))

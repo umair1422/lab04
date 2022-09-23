@@ -5,6 +5,7 @@
 #' @export
 Theme_linkoping<-function()
 {
+  library(ggplot2)
   ggplot2::theme_set(theme_cowplot())
   myplot<-ggdraw() + ggplot2::theme(plot.background = element_rect(fill = '#00b9e7', colour = NA),
                            panel.grid = element_line(colour = "#00b9e7"),

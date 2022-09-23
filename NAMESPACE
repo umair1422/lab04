@@ -2,6 +2,8 @@
 
 export(Theme_linkoping)
 export(linreg)
+exportClasses(linreg)
+import(ggplot2)
 import(grDevices)
 import(methods)
 importFrom(ggplot2,"%+replace%")

@@ -47,8 +47,6 @@ Sets the value for FittedValues
 \section{Methods}{
 
 \describe{
-\item{\code{plot()}}{Plots 2 graphs on a grid that are mention in the lab manual}
-
 \item{\code{pred()}}{return the preticted values (y-hat)}
 
 \item{\code{print()}}{Prints out the coefficient and coefficent names}
@@ -77,5 +75,4 @@ Sets the value for FittedValues
 \examples{
 newobj= linreg$new(frm, iris)
 newobj$summary()
-
 }
