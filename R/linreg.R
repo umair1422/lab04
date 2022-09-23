@@ -1,5 +1,5 @@
 #' Lab4: Computations using ordinary least squares, implement methods in RC class
-#'
+#' @importFrom ggplot2 %+replace%
 #' @param FunctionFormula formula object passed by user
 #' @param data dataframe passed by the user
 #' @field VarianceOfTheRegressionCoefficients matrix.
