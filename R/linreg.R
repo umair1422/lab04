@@ -1,5 +1,4 @@
 #' Lab4: Computations using ordinary least squares, implement methods in RC class
-#' @import methods
 #' @param FunctionFormula formula object passed by user
 #' @param data dataframe passed by the user
 #' @field VarianceOfTheRegressionCoefficients matrix.
@@ -16,7 +15,8 @@
 #' newobj$summary()
 #'
 #' @return class
-#' @export
+#' @export linreg
+#' @import methods
 linreg <- setRefClass("linreg",
 
                       fields = list(
