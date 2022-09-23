@@ -8,11 +8,7 @@
 \arguments{
 \item{FunctionFormula}{formula object passed by user}
 
-\item{formula}{formula object passed by the user}
-
 \item{data}{dataframe passed by the user}
-
-\item{y}{dependent variables matrix}
 
 \item{RegCofMatrix}{independent variables matrix}
 
@@ -21,80 +17,10 @@
 \value{
 class
 
-creates an object based on the arguments passed
-Setter for regression coefficient
-
 the value that has been set
-Setter for Fitted Values
-
-the value that has been set
-Setter for Fitted Values
-
-the value that has been set
-Setter for degree of freedom
-
-the value that has been set
-Setter for degree of residual variance
-
-the value that has been set
-Setter for degree of variance of reg coefficients
-
-the value that has been set
-Setter T Values
-
-the value that has been set
-Setter P Values
-
-the value that has been set
-Print like lm
-
-nothing
-Plot using ggplot2
-
-nothing
-Residuals calculation
-
-Residuals
-predicted values
-
-FittedValues
-coefficeints as named vec
-
-coefficeints as named vec
-Print the Summary
-
-coefficeints as named vec
 }
 \description{
-Constructor to initialize the data fields of this class
-
-Sets the value for RegressionCoeficientMatrix field
-
 Sets the value for FittedValues
-
-Sets the value for Residuals
-
-Sets the value for DegreesOfFreedom
-
-Sets the value for ResidualVariance
-
-Sets the value for VarianceOfTheRegressionCoefficients
-
-Sets the value for TValues
-
-Sets the value for TValues
-
-Prints out the coefficient and coefficent names
-
-Plots 2 graphs on a grid that are mention in the lab manual
-
-return only residuals as vec form
-
-return the preticted values (y-hat)
-
-return the coefficeints as named vec
-
-Print the simmary along with the pvalue, tvalue, sigma and degree of freedom
 }
 \section{Fields}{
 
@@ -121,10 +47,6 @@ Print the simmary along with the pvalue, tvalue, sigma and degree of freedom
 \section{Methods}{
 
 \describe{
-\item{\code{coef()}}{return the coefficeints as named vec}
-
-\item{\code{initialize(formula, data)}}{Constructor to initialize the data fields of this class}
-
 \item{\code{plot()}}{Plots 2 graphs on a grid that are mention in the lab manual}
 
 \item{\code{pred()}}{return the preticted values (y-hat)}
