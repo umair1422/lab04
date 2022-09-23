@@ -43,7 +43,7 @@ linreg <- setRefClass("linreg",
                         #' @param data dataframe passed by the user
                         #' @return creates an object based on the arguments passed
                         initialize = function(formula, data)
-                        {
+                        {"Constructor to initialize the data fields of this class"
                           FunctionFormula <<- formula
                           DataName <<- deparse(substitute(data)) #get the name of dataframe
                           X <- model.matrix(FunctionFormula, data)
@@ -67,7 +67,7 @@ linreg <- setRefClass("linreg",
                         #' @param y dependent variables matrix
                         #' @return the value that has been set
                         setRegCofficient = function(X, y)
-                        {
+                        {"Sets the value for RegressionCoeficientMatrix field"
                           return (RegressionCoeficientMatrix <<- solve(t(X) %*% X) %*% t(X) %*% y)
                         },
 
@@ -79,7 +79,7 @@ linreg <- setRefClass("linreg",
                         #' @param X independent variables matrix
                         #' @return the value that has been set
                         setFittedValues = function(RegCofMatrix, X)
-                        {
+                        {"Sets the value for FittedValues"
                           return (FittedValues <<- X %*% RegCofMatrix)
                         },
 
@@ -90,7 +90,7 @@ linreg <- setRefClass("linreg",
                         #' @param y dependent variables matrix
                         #' @return the value that has been set
                         setResidual = function(y)
-                        {
+                        {"Sets the value for Residuals"
                           return (Residuals <<- y - FittedValues)
                         },
 
@@ -101,7 +101,7 @@ linreg <- setRefClass("linreg",
                         #' @param X independent variables matrix
                         #' @return the value that has been set
                         setDegreesOfFreedom = function(RegCofMatrix, X)
-                        {
+                        {"Sets the value for DegreesOfFreedom"
                           return (DegreesOfFreedom <<- dim(X)[1] - dim(RegCofMatrix)[1])
                         },
 
@@ -110,7 +110,7 @@ linreg <- setRefClass("linreg",
                         #' Sets the value for ResidualVariance
                         #' @return the value that has been set
                         setResidualVariance = function()
-                        {
+                        {"Sets the value for ResidualVariance"
                           return (ResidualVariance <<- (t(Residuals) %*% Residuals) / DegreesOfFreedom)
                         },
 
@@ -120,7 +120,7 @@ linreg <- setRefClass("linreg",
                         #' @param X independent variables matrix
                         #' @return the value that has been set
                         setVarianceOfTheRegressionCoefficients = function(X)
-                        {
+                        {"Sets the value for VarianceOfTheRegressionCoefficients"
                           ans= ResidualVariance[1,1] * (solve(t(X) %*% X))
                           return (VarianceOfTheRegressionCoefficients <<- diag(ans))
                         },
@@ -130,7 +130,7 @@ linreg <- setRefClass("linreg",
                         #' Sets the value for TValues
                         #' @return the value that has been set
                         setTValues = function()
-                        {
+                        {"Sets the value for TValues"
                           return (TValues <<- as.vector(RegressionCoeficientMatrix)/sqrt(VarianceOfTheRegressionCoefficients))
                         },
 
@@ -139,7 +139,7 @@ linreg <- setRefClass("linreg",
                         #' Sets the value for TValues
                         #' @return the value that has been set
                         setPValues = function()
-                        {
+                        {"Sets the value for TValues"
                           return (PValues <<- pt(as.vector(RegressionCoeficientMatrix),df=DegreesOfFreedom))
                         },
 
@@ -151,7 +151,7 @@ linreg <- setRefClass("linreg",
                         #' Prints out the coefficient and coefficent names
                         #' @return nothing
                         print = function()
-                        {
+                        {"Prints out the coefficient and coefficent names"
 
                           cat("Call:\n","linreg(formula = ", format(FunctionFormula), ", data = ", DataName ,")\n\n", sep = "")
                           cat("Coefficients:\n",dimnames(RegressionCoeficientMatrix)[[1]], "\n",RegressionCoeficientMatrix)
@@ -164,7 +164,7 @@ linreg <- setRefClass("linreg",
                         #' Plots 2 graphs on a grid that are mention in the lab manual
                         #' @return nothing
                         plot = function()
-                        {
+                        {"Plots 2 graphs on a grid that are mention in the lab manual"
                           VecFittedValues= unlist (FittedValues)
                           VecResiduals= unlist (Residuals)
                           DataFrame2PlotResidualFit <- data.frame(VecResiduals, VecFittedValues, c(1:length(FittedValues)))
@@ -210,7 +210,7 @@ linreg <- setRefClass("linreg",
                         #' return only residuals as vec form
                         #' @return Residuals
                         resid = function()
-                        {
+                        {"return only residuals as vec form"
                           return(as.vector(Residuals))
                         },
 
@@ -220,7 +220,7 @@ linreg <- setRefClass("linreg",
                         #' return the preticted values (y-hat)
                         #' @return FittedValues
                         pred = function()
-                        {
+                        {"return the preticted values (y-hat)"
                           return(FittedValues)
                         },
 
@@ -229,7 +229,7 @@ linreg <- setRefClass("linreg",
                         #' return the coefficeints as named vec
                         #' @return coefficeints as named vec
                         coef = function()
-                        {
+                        {"return the coefficeints as named vec"
                           c= as.vector(RegressionCoeficientMatrix)
                           names(c) <- rownames(RegressionCoeficientMatrix)
                           return(c)
@@ -239,7 +239,7 @@ linreg <- setRefClass("linreg",
                         #' @description
                         #' Print the simmary along with the pvalue, tvalue, sigma and degree of freedom
                         #' @return coefficeints as named vec
-                        summary = function(){
+                        summary = function(){"Print the simmary along with the pvalue, tvalue, sigma and degree of freedom"
 
                           summaryDetails <- matrix(round(c(as.vector(RegressionCoeficientMatrix), as.vector(sqrt(VarianceOfTheRegressionCoefficients)), as.vector(TValues), as.vector(PValues)),4), ncol = 4)
                           PThreshold <- ifelse(PValues<0.001, "***",no = ifelse(PValues<0.01, "**", ifelse(PValues<0.05, "*", ifelse(PValues<0.1, ".", " "))))

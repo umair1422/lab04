@@ -118,6 +118,11 @@ Print the simmary along with the pvalue, tvalue, sigma and degree of freedom
 \item{\code{PValues}}{t-values in vec form}
 }}
 
+\section{Methods}{
+
+\describe{
+\item{\code{print()}}{lllllllllllllllllllllllllllllllllllllllll}
+}}
 
 \examples{
 newobj= linreg$new(frm, iris)
