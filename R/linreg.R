@@ -16,7 +16,6 @@
 #' newobj$summary()
 #'
 #' @return class
-#' @import methods
 #' @export
 linreg <- setRefClass("linreg",
 

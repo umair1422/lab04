@@ -2,4 +2,3 @@
 
 export(Theme_linkoping)
 exportClasses(linreg)
-import(methods)
