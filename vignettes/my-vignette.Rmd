@@ -1,0 +1,27 @@
+---
+title: "lab4"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(lab4)
+```
+
+# About this package:
+
+This package contains the tasks of lab4 including linreg and theme making task
+
+## Linreg class
+input to this class is formula and data and the class contains various methods to compute various statistical parameters like tvalues, pvalues, residuals etc
+
