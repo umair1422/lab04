@@ -7,9 +7,6 @@
 Theme_linkoping<-function()
 {
 
-  library(ggplot2)
-  library(cowplot)
-  library(magick)
 
   theme_set(theme_cowplot())
   myplot<-ggdraw() + theme(plot.background = element_rect(fill = '#00b9e7', colour = NA),
