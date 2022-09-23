@@ -1,8 +1,6 @@
 #' Lab4: Linkoping University theme
 #'
 #' @description the function plot graph with university's theme
-#' @examples
-#' Theme_linkoping()
 #' @return it returns ggplot object.
 #' @export
 Theme_linkoping<-function()
