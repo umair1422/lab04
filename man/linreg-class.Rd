@@ -72,7 +72,3 @@ Sets the value for FittedValues
 \item{\code{summary()}}{Print the simmary along with the pvalue, tvalue, sigma and degree of freedom}
 }}
 
-\examples{
-newobj= linreg$new(frm, iris)
-newobj$summary()
-}

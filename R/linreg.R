@@ -10,9 +10,6 @@
 #' @field DataName Name of the dataframe passed.
 #' @field FittedValues matrix.
 #' @field PValues t-values in vec form
-#' @examples
-#' newobj= linreg$new(frm, iris)
-#' newobj$summary()
 #' @import ggplot2
 #' @return class
 #' @export linreg

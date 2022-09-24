@@ -5,10 +5,11 @@ Version: 0.1.0
 Authors@R: 
     c(person("Usama", "Nadeem", , "usamanadeem321@gmail.com", role = c("aut")), 
     person("Muhammad", "Umair", , "Umair.raja.1422@gmail.com", role = c("aut", "cre")))
-Description: This packege implements the university's theme and linear regression and calculates residuals, regressionCoefficient, degreeOfFreedom, fittedValues etc
-License: NA
+Description: This packege implements the university's theme and linear regression and calculates residuals, regressionCoefficient, degreeOfFreedom, fittedValues etc.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Imports: methods,ggplot2,cowplot
 Suggests: 
     knitr,
     rmarkdown,
